@@ -1,8 +1,10 @@
 "use client"
 
 import * as React from "react"
+import Image from 'next/image'
 
 import { cn } from "@/lib/utils"
+import { WellcoButton } from "./wellco-button"
 
 interface WellcoCardProps extends React.ComponentProps<"div"> {
   variant?: "default" | "mint" | "rose" | "dark" | "gradient" | "soft"
@@ -191,7 +193,7 @@ function WellcoTestimonialCard({
       {...props}
     >
       <div className="flex flex-col space-y-3">
-        <div className="text-4xl text-[#6EC3C0] leading-none">"</div>
+        <div className="text-4xl text-[#6EC3C0] leading-none">&ldquo;</div>
         <p className="text-gray-700 italic">{quote}</p>
         <div className="border-t pt-3">
           <p className="font-semibold text-[#111827]">{author}</p>
@@ -225,9 +227,11 @@ function WellcoProductCard({
       {...props}
     >
       <div className="relative">
-        <img 
-          src={image} 
+        <Image
+          src={image}
           alt={title}
+          width={400}
+          height={192}
           className="w-full h-48 object-cover rounded-t-xl"
         />
         {badge && (

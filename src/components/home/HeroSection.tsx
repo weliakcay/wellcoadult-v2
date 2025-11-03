@@ -1,12 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { WellcoButton } from '@/components/ui/wellco-button';
 import { GradientText } from '@/components/ui/GradientText';
 import { WellcoHeroSection } from '@/components/ui/wellco-hero';
-import { ArrowRight, Shield, Truck, Bot } from 'lucide-react';
+import { Shield, Truck, Bot } from 'lucide-react';
 
 export function HeroSection() {
   useEffect(() => {
