@@ -4,94 +4,133 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Wellco Adult Brand Colors - Sanatsal Pembe/Kırmızı Paleti */
-
-  /* Dark Backgrounds (Hero & Special Sections) */
-  --wellco-dark-primary: #1A0A1F;     /* Derin Mor/Siyah */
-  --wellco-dark-secondary: #2D1B3D;   /* Koyu Mor */
-  --wellco-dark-accent: #3D2547;      /* Orta Mor */
-
-  /* Accent Colors - Vibrant Pink/Red */
-  --wellco-accent-vibrant: #FF4458;   /* Canlı Kırmızı/Pembe - CTA */
-  --wellco-accent-magenta: #E91E63;   /* Magenta */
-  --wellco-accent-rose: #FF6B9D;      /* Yumuşak Pembe */
-
-  /* Main Colors - Warm Pink Tones */
-  --wellco-primary: #A05F6B;          /* Koyu Gül Pembesi */
-  --wellco-primary-dark: #8B4852;     /* Bordo */
-  --wellco-secondary: #F5D5D8;        /* Yumuşak Pembe */
-  --wellco-secondary-dark: #E8B4B8;   /* Soft Rose */
-
-  /* Neutral Tones */
-  --wellco-neutral: #F7F3F0;          /* Sıcak Krem */
-  --wellco-neutral-light: #FEFCFB;    /* Çok Açık Krem */
-  --wellco-warm: #C17D6E;             /* Terracotta */
-
+  /* Wellco Adult Brand Colors - PDF Renk Sistemi */
+  
+  /* Primary Colors - PDF'den gelen resmi renkler */
+  --wellco-primary: #6EC3C0;           /* Mint - Ana renk */
+  --wellco-secondary: #FFB3B3;         /* Pudra - İkinci renk */
+  --wellco-dark: #111827;              /* Koyu gri - Koyu ton */
+  
+  /* Derived Colors - PDF renklerinden türetilen renkler */
+  --wellco-primary-dark: #4A9B9D;      /* Koyu mint */
+  --wellco-primary-light: #B8DAD9;     /* Açık mint */
+  --wellco-secondary-dark: #E68B8B;    /* Koyu pudra */
+  --wellco-secondary-light: #FFF0F0;   /* Çok açık pudra */
+  --wellco-dark-light: #374151;        /* Orta gri */
+  --wellco-dark-lighter: #6B7280;      /* Açık gri */
+  
+  /* Background Colors */
+  --wellco-bg-primary: #FFFFFF;        /* Beyaz ana arka plan */
+  --wellco-bg-secondary: #F9FAFB;      /* Gri beyaz arka plan */
+  --wellco-bg-dark: var(--wellco-dark); /* Koyu arka plan */
+  
   /* Text Colors */
-  --wellco-text-light: #F5F5F5;       /* Dark bg üzerinde */
-  --wellco-text-dark: #3D2630;        /* Light bg üzerinde */
-  --wellco-text-muted: #B8B8B8;       /* Secondary text */
-
-  /* Gradient Definitions */
-  --gradient-hero: linear-gradient(135deg, #1A0A1F 0%, #2D1B3D 50%, #3D2547 100%);
-  --gradient-cta: linear-gradient(90deg, #FF4458 0%, #E91E63 100%);
-  --gradient-card-hover: linear-gradient(180deg, rgba(255,68,88,0.1) 0%, rgba(233,30,99,0.2) 100%);
-  --gradient-section-divider: linear-gradient(90deg, transparent 0%, #FF4458 50%, transparent 100%);
+  --wellco-text-primary: var(--wellco-dark);      /* Ana metin rengi */
+  --wellco-text-secondary: #6B7280;              /* İkinci metin rengi */
+  --wellco-text-light: #FFFFFF;                   /* Açık arka plan üzerinde metin */
+  --wellco-text-muted: #9CA3AF;                  /* Soluk metin */
+  
+  /* Gradient Definitions - PDF renkleri ile */
+  --gradient-primary: linear-gradient(135deg, var(--wellco-primary) 0%, var(--wellco-primary-dark) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--wellco-secondary) 0%, var(--wellco-secondary-dark) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--wellco-dark) 0%, var(--wellco-dark-light) 100%);
+  --gradient-mint-rose: linear-gradient(90deg, var(--wellco-primary) 0%, var(--wellco-secondary) 100%);
+  --gradient-soft: linear-gradient(180deg, var(--wellco-bg-secondary) 0%, var(--wellco-bg-primary) 100%);
+  
+  /* Hover States */
+  --wellco-hover-primary: var(--wellco-primary-dark);
+  --wellco-hover-secondary: var(--wellco-secondary-dark);
+  --wellco-hover-dark: var(--wellco-dark-light);
+  
+  /* Focus States */
+  --wellco-focus: var(--wellco-primary);
+  --wellco-focus-ring: rgba(110, 195, 192, 0.3);
+  
+  /* Component-specific colors */
+  --wellco-button-primary: var(--wellco-primary);
+  --wellco-button-secondary: var(--wellco-secondary);
+  --wellco-button-text: #FFFFFF;
+  
+  /* Border Colors */
+  --wellco-border-light: #E5E7EB;
+  --wellco-border-medium: #D1D5DB;
+  --wellco-border-dark: var(--wellco-dark-light);
+  
+  /* Success/Error/Warning States */
+  --wellco-success: #10B981;
+  --wellco-error: #EF4444;
+  --wellco-warning: #F59E0B;
+  --wellco-info: var(--wellco-primary);
 
   --radius: 0.625rem;
 
   /* shadcn/ui Theme Colors - Light Mode (Default) */
-  --background: oklch(0.98 0.005 35);         /* Wellco Neutral (#F7F3F0) */
-  --foreground: oklch(0.23 0.02 350);         /* Wellco Text Dark (#3D2630) */
-  --card: oklch(1 0 0);                       /* White cards */
-  --card-foreground: oklch(0.23 0.02 350);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.23 0.02 350);
-  --primary: oklch(0.55 0.08 355);            /* Wellco Primary (#A05F6B) */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.91 0.03 10);           /* Wellco Secondary (#F5D5D8) */
-  --secondary-foreground: oklch(0.23 0.02 350);
-  --muted: oklch(0.96 0.005 35);
-  --muted-foreground: oklch(0.72 0.01 0);     /* Muted text (#B8B8B8) */
-  --accent: oklch(0.63 0.15 355);             /* Wellco Accent Vibrant (#FF4458) */
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: var(--wellco-bg-primary);
+  --foreground: var(--wellco-text-primary);
+  --card: var(--wellco-bg-primary);
+  --card-foreground: var(--wellco-text-primary);
+  --popover: var(--wellco-bg-primary);
+  --popover-foreground: var(--wellco-text-primary);
+  --primary: var(--wellco-primary);
+  --primary-foreground: var(--wellco-button-text);
+  --secondary: var(--wellco-secondary);
+  --secondary-foreground: var(--wellco-text-primary);
+  --muted: var(--wellco-bg-secondary);
+  --muted-foreground: var(--wellco-text-secondary);
+  --accent: var(--wellco-secondary);
+  --accent-foreground: var(--wellco-text-primary);
+  --destructive: var(--wellco-error);
+  --border: var(--wellco-border-light);
+  --input: var(--wellco-bg-primary);
+  --ring: var(--wellco-focus);
+  --chart-1: var(--wellco-primary);
+  --chart-2: var(--wellco-secondary);
+  --chart-3: var(--wellco-primary-dark);
+  --chart-4: var(--wellco-secondary-dark);
+  --chart-5: var(--wellco-dark);
+  --sidebar: var(--wellco-bg-primary);
+  --sidebar-foreground: var(--wellco-text-primary);
+  --sidebar-primary: var(--wellco-primary);
+  --sidebar-primary-foreground: var(--wellco-button-text);
+  --sidebar-accent: var(--wellco-bg-secondary);
+  --sidebar-accent-foreground: var(--wellco-text-primary);
+  --sidebar-border: var(--wellco-border-light);
+  --sidebar-ring: var(--wellco-focus);
 }
 
 @theme inline {
-  /* Wellco Brand Colors - All Custom Colors */
-  --color-wellco-dark-primary: var(--wellco-dark-primary);
-  --color-wellco-dark-secondary: var(--wellco-dark-secondary);
-  --color-wellco-dark-accent: var(--wellco-dark-accent);
-  --color-wellco-accent-vibrant: var(--wellco-accent-vibrant);
-  --color-wellco-accent-magenta: var(--wellco-accent-magenta);
-  --color-wellco-accent-rose: var(--wellco-accent-rose);
+  /* Wellco Brand Colors - PDF Colors */
   --color-wellco-primary: var(--wellco-primary);
-  --color-wellco-primary-dark: var(--wellco-primary-dark);
   --color-wellco-secondary: var(--wellco-secondary);
+  --color-wellco-dark: var(--wellco-dark);
+  --color-wellco-primary-dark: var(--wellco-primary-dark);
+  --color-wellco-primary-light: var(--wellco-primary-light);
   --color-wellco-secondary-dark: var(--wellco-secondary-dark);
-  --color-wellco-neutral: var(--wellco-neutral);
-  --color-wellco-neutral-light: var(--wellco-neutral-light);
-  --color-wellco-warm: var(--wellco-warm);
+  --color-wellco-secondary-light: var(--wellco-secondary-light);
+  --color-wellco-dark-light: var(--wellco-dark-light);
+  --color-wellco-dark-lighter: var(--wellco-dark-lighter);
+  --color-wellco-bg-primary: var(--wellco-bg-primary);
+  --color-wellco-bg-secondary: var(--wellco-bg-secondary);
+  --color-wellco-bg-dark: var(--wellco-bg-dark);
+  --color-wellco-text-primary: var(--wellco-text-primary);
+  --color-wellco-text-secondary: var(--wellco-text-secondary);
   --color-wellco-text-light: var(--wellco-text-light);
-  --color-wellco-text-dark: var(--wellco-text-dark);
   --color-wellco-text-muted: var(--wellco-text-muted);
+  --color-wellco-hover-primary: var(--wellco-hover-primary);
+  --color-wellco-hover-secondary: var(--wellco-hover-secondary);
+  --color-wellco-hover-dark: var(--wellco-hover-dark);
+  --color-wellco-focus: var(--wellco-focus);
+  --color-wellco-focus-ring: var(--wellco-focus-ring);
+  --color-wellco-button-primary: var(--wellco-button-primary);
+  --color-wellco-button-secondary: var(--wellco-button-secondary);
+  --color-wellco-button-text: var(--wellco-button-text);
+  --color-wellco-border-light: var(--wellco-border-light);
+  --color-wellco-border-medium: var(--wellco-border-medium);
+  --color-wellco-border-dark: var(--wellco-border-dark);
+  --color-wellco-success: var(--wellco-success);
+  --color-wellco-error: var(--wellco-error);
+  --color-wellco-warning: var(--wellco-warning);
+  --color-wellco-info: var(--wellco-info);
 
   /* shadcn/ui theme */
   --color-background: var(--background);
@@ -134,40 +173,39 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Wellco Adult uses light mode only for trust and clarity */
-
+/* Dark theme - PDF renklerinin koyu varyasyonları */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: var(--wellco-dark);
+  --foreground: var(--wellco-text-light);
+  --card: var(--wellco-dark-light);
+  --card-foreground: var(--wellco-text-light);
+  --popover: var(--wellco-dark-light);
+  --popover-foreground: var(--wellco-text-light);
+  --primary: var(--wellco-primary-light);
+  --primary-foreground: var(--wellco-text-primary);
+  --secondary: var(--wellco-secondary-light);
+  --secondary-foreground: var(--wellco-text-primary);
+  --muted: var(--wellco-dark-lighter);
+  --muted-foreground: var(--wellco-text-muted);
+  --accent: var(--wellco-secondary-light);
+  --accent-foreground: var(--wellco-text-primary);
+  --destructive: var(--wellco-error);
+  --border: var(--wellco-dark-light);
+  --input: var(--wellco-dark-light);
+  --ring: var(--wellco-primary-light);
+  --chart-1: var(--wellco-primary-light);
+  --chart-2: var(--wellco-secondary-light);
+  --chart-3: var(--wellco-primary);
+  --chart-4: var(--wellco-secondary);
+  --chart-5: var(--wellco-text-light);
+  --sidebar: var(--wellco-dark);
+  --sidebar-foreground: var(--wellco-text-light);
+  --sidebar-primary: var(--wellco-primary-light);
+  --sidebar-primary-foreground: var(--wellco-text-primary);
+  --sidebar-accent: var(--wellco-dark-light);
+  --sidebar-accent-foreground: var(--wellco-text-light);
+  --sidebar-border: var(--wellco-dark-light);
+  --sidebar-ring: var(--wellco-primary-light);
 }
 
 @layer base {
@@ -182,7 +220,7 @@
   }
 }
 
-/* Custom Animations */
+/* Custom Animations - PDF renklerine uygun */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -194,10 +232,10 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 68, 88, 0.3);
+    box-shadow: 0 0 20px rgba(110, 195, 192, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 68, 88, 0.6);
+    box-shadow: 0 0 40px rgba(110, 195, 192, 0.6);
   }
 }
 
@@ -269,7 +307,7 @@
   }
 }
 
-/* Utility Classes */
+/* Utility Classes - PDF renkleri ile */
 @layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -308,27 +346,39 @@
     background: var(--gradient-hero);
   }
 
-  .gradient-cta {
-    background: var(--gradient-cta);
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-mint-rose {
+    background: var(--gradient-mint-rose);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
   }
 
   .text-gradient {
-    background: var(--gradient-cta);
+    background: var(--gradient-mint-rose);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .glow-pink {
-    box-shadow: 0 0 40px rgba(255, 68, 88, 0.6);
+  .glow-mint {
+    box-shadow: 0 0 40px rgba(110, 195, 192, 0.6);
   }
 
-  .glow-magenta {
-    box-shadow: 0 0 40px rgba(233, 30, 99, 0.6);
+  .glow-rose {
+    box-shadow: 0 0 40px rgba(255, 179, 179, 0.6);
   }
 
-  .backdrop-artistic {
+  .backdrop-wellco {
     backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(45, 27, 61, 0.7);
+    background: rgba(255, 255, 255, 0.8);
   }
 }
